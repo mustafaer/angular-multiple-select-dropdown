@@ -16,7 +16,11 @@
   <div aria-labelledby="multipleSelectDropdownMenuButton"
        class="dropdown-menu col-12 pb-0">
     <label *ngIf="isSearchable" class="col-12">
-      <input #searchInput (keyup)="search(searchInput.value)" class="form-control border-radius-0"
+      <input #searchInput
+             (keyup)="search(searchInput.value)"
+             autocomplete="off"
+             autofocus
+             class="form-control border-radius-0"
              placeholder="{{'search' | translate}}">
     </label>
     <div (click)="stopClose($event)" class="col-12 drp-menu p-0">
