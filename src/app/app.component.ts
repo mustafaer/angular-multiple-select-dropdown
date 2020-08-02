@@ -19,7 +19,7 @@ export class AppComponent {
   }, {
     name: 'test 22',
     value: 'val 2'
-  },{
+  }, {
     name: 'test 222',
     value: 'val 2'
   }, {
@@ -34,9 +34,14 @@ export class AppComponent {
   }];
 
   constructor() {
+    this.setLanguage('en')
   }
 
   getSelectedItems(items): void {
     this.selectedItems = items;
+  }
+
+  setLanguage(lang: string): void {
+    localStorage.setItem('lang', lang);
   }
 }
