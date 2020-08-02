@@ -20,11 +20,11 @@ export class MultipleDropdownComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  stopClose(event) {
+  stopClose(event): void {
     event.stopPropagation();
   }
 
-  selectData(event, item) {
+  selectData(event, item: {}): void {
     if (event.target.checked) {
       this.selectedItems.push(item)
     } else {
@@ -35,7 +35,7 @@ export class MultipleDropdownComponent implements OnInit {
     }
   }
 
-  emitData() {
+  emitData(): void {
     const items = [...this.selectedItems]
     this.selectResult.emit(items);
   }

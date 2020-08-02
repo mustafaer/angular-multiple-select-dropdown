@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'cl';
+  title = 'Angular multiple select dropdown';
 
   selectedItems: [];
 
@@ -30,7 +30,7 @@ export class AppComponent {
   constructor() {
   }
 
-  getSelectedItems(items) {
+  getSelectedItems(items): void {
     this.selectedItems = items;
   }
 }
