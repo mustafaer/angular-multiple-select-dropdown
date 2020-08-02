@@ -4,8 +4,8 @@
   "description": "Angular multiple select dropdown",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open",
-    "build": "ng build --prod",
+    "start": "ng serve",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
