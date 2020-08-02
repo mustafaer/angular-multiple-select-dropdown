@@ -5,8 +5,8 @@
           data-toggle="dropdown"
           id="multipleSelectDropdownMenuButton"
           type="button">
-    <span *ngIf="selectedItems.length<=0">
-      {{(dropdownName ? dropdownName : 'select') | translate}}
+    <span *ngIf="selectedItems.length <= 0">
+      {{dropdownName | translate}}
     </span>
     <span *ngFor="let data of selectedItems;let i = index ">
       <span *ngIf="i !== 0">,&nbsp;</span>
@@ -15,12 +15,15 @@
   </button>
   <div aria-labelledby="multipleSelectDropdownMenuButton"
        class="dropdown-menu col-12 pb-0">
-    <div class="col-12 drp-menu p-0" (click)="stopClose($event)"
-    >
+    <label *ngIf="isSearchable" class="col-12">
+      <input #searchInput (keyup)="search(searchInput.value)" class="form-control border-radius-0"
+             placeholder="{{'search' | translate}}">
+    </label>
+    <div (click)="stopClose($event)" class="col-12 drp-menu p-0">
       <label *ngFor="let item of items" class="dropdown-item m-0 cursor-pointer">
         <input (click)="selectData($event,item)" type="checkbox">
         <span class="ml-2">{{item[translateObjectKey] | translate}}</span></label>
     </div>
-    <button class="col-12 border-radius-0 btn btn-secondary mt-1" (click)="emitData()">{{'apply' | translate}}</button>
+    <button (click)="emitData()" class="col-12 border-radius-0 btn btn-secondary mt-1">{{'apply' | translate}}</button>
   </div>
 </div>

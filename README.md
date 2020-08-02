@@ -11,9 +11,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 * Multilanguage support
 
 ## Attributes
-|Attribute|Type|Description|
-|---|---|---|
-|dropdownName   |string   |If any item not selected, this text will show on dropdown with translate.   |
-|translateObjectKey   |string   |Key name for row   |
-|items   |[]   |Dropdown items.   |
-|(selectResult)   |   |Get selected items with emit.   |
+|Attribute|Type|Default|Description|
+|---|---|---|---|
+|dropdownName   |string | select |If any item not selected, this text will show on dropdown with translate.   |
+|translateObjectKey   |string  | name |Key name for row.   |
+|items   |[]   | []|Dropdown items.   |
+|isSearchable   |boolean | true  | Search input status.  |
+|(selectResult)   |   | |Get selected items with emit.   |

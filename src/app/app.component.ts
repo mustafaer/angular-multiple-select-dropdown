@@ -17,6 +17,12 @@ export class AppComponent {
     name: 'test 2',
     value: 'val 2'
   }, {
+    name: 'test 22',
+    value: 'val 2'
+  },{
+    name: 'test 222',
+    value: 'val 2'
+  }, {
     name: 'test 3',
     value: 'val 3'
   }, {

@@ -3,6 +3,7 @@
     <div class="col-12">
       <h3 class="mb-5">{{'headTitle' | translate}}</h3>
       <app-multiple-dropdown (selectResult)="getSelectedItems($event)"
+                             [isSearchable]="true"
                              [items]="items"
                              dropdownName="select"
                              translateObjectKey="name">

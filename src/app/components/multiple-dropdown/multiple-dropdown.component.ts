@@ -7,17 +7,20 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class MultipleDropdownComponent implements OnInit {
 
-  @Input() dropdownName: string;
-  @Input() translateObjectKey: string;
-  @Input() items: [];
+  @Input() dropdownName: string = 'select';
+  @Input() isSearchable: boolean = true;
+  @Input() translateObjectKey: string = 'name';
+  @Input() items: any[];
   @Output() selectResult = new EventEmitter();
 
   selectedItems = [];
+  storedItems: any[];
 
   constructor() {
   }
 
   ngOnInit(): void {
+    this.storedItems = [...this.items]
   }
 
   stopClose(event): void {
@@ -38,6 +41,10 @@ export class MultipleDropdownComponent implements OnInit {
   emitData(): void {
     const items = [...this.selectedItems]
     this.selectResult.emit(items);
+  }
+
+  search(data) {
+    this.items = ((this.storedItems).filter((item: any) => ((item[this.translateObjectKey]).toLowerCase().trim()).indexOf(data.toLowerCase().trim()) > -1));
   }
 
 }
